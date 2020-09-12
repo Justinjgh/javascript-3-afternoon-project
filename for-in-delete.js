@@ -154,11 +154,11 @@ function secrets ( object ){
 //Code Here
 
 function removePassword ( obj ){
-  for(let key in obj){
-  if(key==="password"){
-    delete obj[key];
-  }
-}
+  // for(let key in obj){
+  // if(key==="password"){
+    delete obj["password"];
+  // }
+// }
 return obj;
 }
 
@@ -205,6 +205,8 @@ removeBig(deleteTheBigNumbers);
 
 
 
+
+
 function startsWithK(obj){
   for(let key in obj){
     if(key.startsWith("k")){
@@ -213,6 +215,7 @@ function startsWithK(obj){
   }
   return obj;
 }
+
 
 
 ////////// PROBLEM 8 //////////

@@ -52,6 +52,18 @@ var employees = [
 
 //Code Here
 
+function employeeUpdater(){
+  for(var x = 0; x < employees.length; x++){
+    var emp = employees[x];
+    if(emp.firstName === "Theo"){
+    employees.splice(x, 1);
+    }
+    if(emp.firstName === "Lorie"){
+      emp.department = "HR";
+    }
+  }
+  return employees;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -69,8 +81,29 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+// function removeDuplicates(){
+//   for(x = 0; x < workplaceAccidents.length; x++){
+//     var n = workplaceAccidents[x]
+//     var seenIt=false;
+//     for(y = 0; y < workplaceAccidents.length; y++){
+//     var m = workplaceAccidents[y]
+//     if(n == m && x != y){
+//       //splice element
+//     }
+//     }
 
+//   }
+// }
 
+function removeDuplicates(arr){
+  var tmp = [];
+  for(var i = 0; i < workplaceAccidents.length; i++){
+      if(tmp.indexOf(arr[i]) == -1){
+      tmp.push(arr[i]);
+      }
+  }
+  return tmp;
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -87,7 +120,7 @@ var cat = {
       activities: ['sleep', 'pre-sleep naps']
     }
   ]
-}
+};
 // Do not edit the code above.
 
 /*
@@ -97,8 +130,40 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+////////// PROBLEM 3 //////////
+
+// Do not edit the code below.
+var cat = {
+  name: 'Fluffy',
+  catFriends: [
+    {
+      name: 'Grumpy',
+      activities: ['be grumpy', 'eat food']
+    }, 
+    {
+      name: 'Lazy Bones',
+      activities: ['sleep', 'pre-sleep naps']
+    }
+  ]
+};
+// Do not edit the code above.
+
+/*
+  Fluffy has two friends, Grumpy and Lazy Bones. 
+    1. Assign the value of Grumpy's 2nd activity to the grumpyActivity variable below.
+    2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
+*/
+
+//Code Here
+
+
+
+var grumpyActivity = cat.catFriends[0].activities[1];
+
+var fluffy2ndFriend = cat.catFriends[1].name;
+
+
+
 
 
 
@@ -126,7 +191,7 @@ var myCar = {
       atFaultForAccident: true
     }
   ]
-}
+};
 // Do not edit the code above.
 
 /*
@@ -139,6 +204,17 @@ var myCar = {
 */
 
 //Code Here
+
+function recordCleaner() {
+  for(var i in myCar.accidents){
+  
+   myCar.accidents[i].atFaultForAccident = false;
+   console.log(myCar.accidents[i].atFaultForAccident)
+  }
+}
+recordCleaner()
+
+
 
 
 
@@ -158,5 +234,26 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+
+function looper(){
+  var temp = numsArr
+  for(var i in temp){
+    for(var j in temp[i]){
+      if(temp[i] [j] % 2 === 0) //number is even
+      {
+        temp[i] [j] = "even";
+      
+      }
+else {
+  temp[i] [j] = "odd";
+}
+    }
+
+  }
+  return temp;
+}
+
+
+
 
 
